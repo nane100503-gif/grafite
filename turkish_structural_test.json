@@ -14,14 +14,16 @@
             "tense": "necessitative",
             "voice": "passive"
           },
-          "object_clause": {
-            "type": "indirect_interrogative_clause",
-            "surface": "olup olmadığına"
-          },
-          "adverbial_phrase": {
-            "type": "participle_clause",
-            "surface": "hastanede yatan",
-            "head": "hastalar"
+          "complements": {
+            "adverbial_phrase": {
+              "type": "participle_clause",
+              "surface": "hastanede yatan",
+              "head": "hastalar"
+            },
+            "object_clause": {
+              "type": "indirect_interrogative_clause",
+              "surface": "olup olmadığına"
+            }
           }
         }
       }
@@ -41,12 +43,14 @@
             "person": "2nd_plural"
           },
           "question_particle": "mu",
-          "object_clause": {
-            "type": "complement_clause",
+          "complement_clause": {
+            "type": "accusative_complement_clause",
             "embedded_clause": {
               "subject": "Ahmet",
-              "temporal_modifier": "dün",
-              "goal": "İstanbul'a",
+              "adverbials": {
+                "time": "dün",
+                "goal": "İstanbul'a"
+              },
               "verb": {
                 "surface": "döndüğünü",
                 "lemma": "dönmek",
@@ -73,15 +77,15 @@
             "tense": "past",
             "person": "1st_plural"
           },
-          "object_clause": {
-            "type": "nominalized_clause",
-            "marker": "-dik",
+          "complement_clause": {
+            "type": "accusative_nominalized_clause",
             "embedded_clause": {
               "subject": "Bu antik kent",
               "verb": {
                 "surface": "girdiğini",
                 "lemma": "girmek",
                 "tense": "past",
+                "nominalization": "-dik",
                 "case": "accusative"
               }
             }
@@ -103,8 +107,9 @@
             "tense": "past",
             "person": "1st_singular"
           },
-          "object_clause": {
-            "type": "clausal_complement",
+          "question_particle": "mu",
+          "complement_clause": {
+            "type": "accusative_complement_clause",
             "embedded_clause": {
               "subject": "Ayfer",
               "verb": {
@@ -130,20 +135,19 @@
           "verb": {
             "surface": "istemiyorsun",
             "lemma": "istemek",
-            "tense": "present_continuous",
-            "person": "2nd_singular",
+            "tense": "present",
             "polarity": "negative"
           },
-          "object_clause": {
-            "type": "complex_complement",
-            "embedded_clause": {
+          "complement_clause": {
+            "type": "nested_intentional_clause",
+            "embedded_structure": {
               "verb": "anlamak",
               "inner_clause": {
                 "subject": "I",
                 "verb": {
                   "surface": "istediğimi",
                   "lemma": "istemek",
-                  "nominalization": true
+                  "nominalization": "-dik"
                 },
                 "object": {
                   "verb": "ayrılmak",
@@ -169,10 +173,10 @@
             "tense": "past",
             "person": "3rd_plural"
           },
-          "object_clause": {
-            "type": "clausal_complement",
+          "complement_clause": {
+            "type": "accusative_complement_clause",
             "embedded_clause": {
-              "subject": "anlaşma",
+              "event": "anlaşmanın imzalanması",
               "modifier": "bu iki ülke arasında",
               "verb": {
                 "surface": "imzalandığını",
@@ -198,15 +202,15 @@
             "lemma": "memnun olmamak",
             "tense": "past"
           },
-          "object_clause": {
-            "type": "clausal_complement",
-            "case": "dative",
+          "complement_clause": {
+            "type": "dative_complement_clause",
             "embedded_clause": {
               "subject": "zanlı",
               "verb": {
                 "surface": "söylediğine",
                 "lemma": "söylemek",
-                "nominalization": true
+                "nominalization": true,
+                "case": "dative"
               }
             }
           }
@@ -226,10 +230,10 @@
             "lemma": "pişman olmak",
             "tense": "past"
           },
-          "object_clause": {
-            "type": "clausal_complement",
+          "complement_clause": {
+            "type": "dative_complement_clause",
             "embedded_clause": {
-              "verb": "söylemek",
+              "event": "söyleme eylemi",
               "case": "dative",
               "content": "sana aşağılayıcı sözler söylediğim"
             }
@@ -250,8 +254,8 @@
             "lemma": "sevinmek",
             "tense": "present"
           },
-          "object_clause": {
-            "type": "clausal_complement",
+          "complement_clause": {
+            "type": "dative_clausal_complement",
             "embedded_clause": {
               "verb": "yapamamak",
               "case": "dative"
@@ -271,9 +275,12 @@
           "main_clause": {
             "verb": "tıklayınız"
           },
-          "object": "ürünlerin listesini öğrenmek"
+          "object": {
+            "type": "infinitive_phrase",
+            "content": "ürünlerin listesini öğrenmek"
+          }
         }
       }
     }
   ]
-} 
+}
