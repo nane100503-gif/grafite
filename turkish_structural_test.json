@@ -1,0 +1,279 @@
+{
+  "name": "turkish_structural_test",
+  "tests": [
+    {
+      "id": 1,
+      "input": "Hastanede yatan hastalarda beden içine giren herhangi bir intravenöz yol, nazogastrik kateter, idrar kateterleri ve başka kateterler ya da hatlar olup olmadığına bakılmalıdır.",
+      "expected_structure": {
+        "sentence_type": "declarative",
+        "main_clause": {
+          "subject": "implicit_general_subject",
+          "verb": {
+            "surface": "bakılmalıdır",
+            "lemma": "bakmak",
+            "tense": "necessitative",
+            "voice": "passive"
+          },
+          "object_clause": {
+            "type": "indirect_interrogative_clause",
+            "surface": "olup olmadığına"
+          },
+          "adverbial_phrase": {
+            "type": "participle_clause",
+            "surface": "hastanede yatan",
+            "head": "hastalar"
+          }
+        }
+      }
+    },
+
+    {
+      "id": 2,
+      "input": "Ahmet'in dün İstanbul'a döndüğünü duydunuz mu?",
+      "expected_structure": {
+        "sentence_type": "interrogative",
+        "main_clause": {
+          "subject": "implicit_second_person_plural",
+          "verb": {
+            "surface": "duydunuz",
+            "lemma": "duymak",
+            "tense": "past",
+            "person": "2nd_plural"
+          },
+          "question_particle": "mu",
+          "object_clause": {
+            "type": "complement_clause",
+            "embedded_clause": {
+              "subject": "Ahmet",
+              "temporal_modifier": "dün",
+              "goal": "İstanbul'a",
+              "verb": {
+                "surface": "döndüğünü",
+                "lemma": "dönmek",
+                "tense": "past",
+                "nominalization": "-dik",
+                "case": "accusative"
+              }
+            }
+          }
+        }
+      }
+    },
+
+    {
+      "id": 3,
+      "input": "Bu antik kentin dünya mirası listesine girdiğini hatırladık.",
+      "expected_structure": {
+        "sentence_type": "declarative",
+        "main_clause": {
+          "subject": "implicit_first_person_plural",
+          "verb": {
+            "surface": "hatırladık",
+            "lemma": "hatırlamak",
+            "tense": "past",
+            "person": "1st_plural"
+          },
+          "object_clause": {
+            "type": "nominalized_clause",
+            "marker": "-dik",
+            "embedded_clause": {
+              "subject": "Bu antik kent",
+              "verb": {
+                "surface": "girdiğini",
+                "lemma": "girmek",
+                "tense": "past",
+                "case": "accusative"
+              }
+            }
+          }
+        }
+      }
+    },
+
+    {
+      "id": 4,
+      "input": "Ayfer'le evlendiğini duydum, doğru mu?",
+      "expected_structure": {
+        "sentence_type": "interrogative",
+        "main_clause": {
+          "subject": "implicit_first_person_singular",
+          "verb": {
+            "surface": "duydum",
+            "lemma": "duymak",
+            "tense": "past",
+            "person": "1st_singular"
+          },
+          "object_clause": {
+            "type": "clausal_complement",
+            "embedded_clause": {
+              "subject": "Ayfer",
+              "verb": {
+                "surface": "evlendiğini",
+                "lemma": "evlenmek",
+                "tense": "past",
+                "nominalization": "-dik",
+                "case": "accusative"
+              }
+            }
+          }
+        }
+      }
+    },
+
+    {
+      "id": 5,
+      "input": "Senden ayrılmak istediğimi neden anlamak istemiyorsun?",
+      "expected_structure": {
+        "sentence_type": "interrogative",
+        "main_clause": {
+          "subject": "implicit_second_person_singular",
+          "verb": {
+            "surface": "istemiyorsun",
+            "lemma": "istemek",
+            "tense": "present_continuous",
+            "person": "2nd_singular",
+            "polarity": "negative"
+          },
+          "object_clause": {
+            "type": "complex_complement",
+            "embedded_clause": {
+              "verb": "anlamak",
+              "inner_clause": {
+                "subject": "I",
+                "verb": {
+                  "surface": "istediğimi",
+                  "lemma": "istemek",
+                  "nominalization": true
+                },
+                "object": {
+                  "verb": "ayrılmak",
+                  "source": "senden"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    {
+      "id": 6,
+      "input": "Basın mensupları bu iki ülke arasında yeni bir anlaşmanın imzalandığını öğrendi.",
+      "expected_structure": {
+        "sentence_type": "declarative",
+        "main_clause": {
+          "subject": "Basın mensupları",
+          "verb": {
+            "surface": "öğrendi",
+            "lemma": "öğrenmek",
+            "tense": "past",
+            "person": "3rd_plural"
+          },
+          "object_clause": {
+            "type": "clausal_complement",
+            "embedded_clause": {
+              "subject": "anlaşma",
+              "modifier": "bu iki ülke arasında",
+              "verb": {
+                "surface": "imzalandığını",
+                "lemma": "imzalanmak",
+                "voice": "passive",
+                "case": "accusative"
+              }
+            }
+          }
+        }
+      }
+    },
+
+    {
+      "id": 7,
+      "input": "Avukat zanlının yalan söylediğine memnun olmadı.",
+      "expected_structure": {
+        "sentence_type": "declarative",
+        "main_clause": {
+          "subject": "Avukat",
+          "verb": {
+            "surface": "memnun olmadı",
+            "lemma": "memnun olmamak",
+            "tense": "past"
+          },
+          "object_clause": {
+            "type": "clausal_complement",
+            "case": "dative",
+            "embedded_clause": {
+              "subject": "zanlı",
+              "verb": {
+                "surface": "söylediğine",
+                "lemma": "söylemek",
+                "nominalization": true
+              }
+            }
+          }
+        }
+      }
+    },
+
+    {
+      "id": 8,
+      "input": "Sana aşağılayıcı sözler söylediğime pişman oldum.",
+      "expected_structure": {
+        "sentence_type": "declarative",
+        "main_clause": {
+          "subject": "implicit_first_person_singular",
+          "verb": {
+            "surface": "pişman oldum",
+            "lemma": "pişman olmak",
+            "tense": "past"
+          },
+          "object_clause": {
+            "type": "clausal_complement",
+            "embedded_clause": {
+              "verb": "söylemek",
+              "case": "dative",
+              "content": "sana aşağılayıcı sözler söylediğim"
+            }
+          }
+        }
+      }
+    },
+
+    {
+      "id": 9,
+      "input": "Bu işi yapamadığımıza sanki seviniyorsun.",
+      "expected_structure": {
+        "sentence_type": "declarative",
+        "main_clause": {
+          "subject": "implicit_second_person_singular",
+          "verb": {
+            "surface": "seviniyorsun",
+            "lemma": "sevinmek",
+            "tense": "present"
+          },
+          "object_clause": {
+            "type": "clausal_complement",
+            "embedded_clause": {
+              "verb": "yapamamak",
+              "case": "dative"
+            }
+          }
+        }
+      }
+    },
+
+    {
+      "id": 10,
+      "input": "Para verildiğine pişman eden ürünlerin listesini öğrenmek isterseniz bu linke tıklayınız.",
+      "expected_structure": {
+        "sentence_type": "conditional",
+        "conditional_clause": {
+          "verb": "isterseniz",
+          "main_clause": {
+            "verb": "tıklayınız"
+          },
+          "object": "ürünlerin listesini öğrenmek"
+        }
+      }
+    }
+  ]
+} 
